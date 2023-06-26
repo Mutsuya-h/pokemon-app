@@ -7,7 +7,7 @@ from tensorflow.keras.preprocessing import image
 import numpy as np
 
 
-classes = ["イーブイ","ギャラドス","ミュー","ミューツー","ピカチュウ","ヒトカゲ","フシギダネ","カビゴン","カイリュウ","ゼニガメ"]
+classes = ["イーブイ","ギャラドス","ミューツー","ピカチュウ","ヒトカゲ","フシギダネ","ゼニガメ"]
 image_size = 50
 
 UPLOAD_FOLDER = "uploads"
