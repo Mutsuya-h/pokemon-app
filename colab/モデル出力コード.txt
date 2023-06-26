@@ -1,0 +1,11 @@
+# モデルのデータ出力
+from google.colab import files
+
+# resultディレクトリを作成
+result_dir = "result"
+if not os.path.exists(result_dir):
+  os.mkdir(result_dir)
+# 学習したモデルを保存
+model.save(os.path.join(result_dir, "model.h5"))
+
+files.download("/content/result/model.h5")

@@ -1,0 +1,45 @@
+[2023-06-24 22:01:10,825] ERROR in app: Exception on / [POST]
+Traceback (most recent call last):
+  File "C:\Users\Mutsuya\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mutsuya\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mutsuya\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mutsuya\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mutsuya\Documents\aidemy_pokemon_app\pokemon_1.1.py", line 44, in upload_file
+    result = model.predict(data)[0]
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mutsuya\AppData\Local\Programs\Python\Python311\Lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\Mutsuya\AppData\Local\Temp\__autograph_generated_file855glbmw.py", line 18, in tf__predict_function
+    raise
+ValueError: in user code:
+
+    File "C:\Users\Mutsuya\AppData\Local\Programs\Python\Python311\Lib\site-packages\keras\engine\training.py", line 2169, in predict_function  *
+        return step_function(self, iterator)
+    File "C:\Users\Mutsuya\AppData\Local\Programs\Python\Python311\Lib\site-packages\keras\engine\training.py", line 2155, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "C:\Users\Mutsuya\AppData\Local\Programs\Python\Python311\Lib\site-packages\keras\engine\training.py", line 2143, in run_step  **
+        outputs = model.predict_step(data)
+    File "C:\Users\Mutsuya\AppData\Local\Programs\Python\Python311\Lib\site-packages\keras\engine\training.py", line 2111, in predict_step
+        return self(x, training=False)
+    File "C:\Users\Mutsuya\AppData\Local\Programs\Python\Python311\Lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+        raise e.with_traceback(filtered_tb) from None
+    File "C:\Users\Mutsuya\AppData\Local\Programs\Python\Python311\Lib\site-packages\keras\engine\input_spec.py", line 280, in assert_input_compatibility
+        raise ValueError(
+
+    ValueError: Exception encountered when calling layer 'model_3' (type Functional).
+
+    Input 0 of layer "block1_conv1" is incompatible with the layer: expected axis -1 of input shape to have value 3, but received input with shape (None, 50, 50, 1)
+
+    Call arguments received by layer 'model_3' (type Functional):
+      • inputs=tf.Tensor(shape=(None, 50, 50, 1), dtype=float32)
+      • training=False
+      • mask=None
+      
